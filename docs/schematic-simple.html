@@ -1,0 +1,37 @@
+<div id="kvm-simple-circuit">
+  <style>
+    #kvm-simple-circuit { color:var(--foreground); font-family:var(--font-sans,system-ui); }
+    #kvm-simple-circuit .branch { display:grid; grid-template-columns:82px minmax(0,1fr) 82px; align-items:center; gap:8px; margin:24px 0; }
+    #kvm-simple-circuit .terminal { font-weight:500; }
+    #kvm-simple-circuit .terminal:last-child { text-align:right; }
+    #kvm-simple-circuit .contact { display:block; color:var(--muted-foreground); font-weight:400; }
+    #kvm-simple-circuit .path { display:flex; justify-content:center; align-items:center; gap:8px; position:relative; }
+    #kvm-simple-circuit .path::before { content:""; position:absolute; left:-8px; right:-8px; top:50%; border-top:1px solid currentColor; z-index:0; }
+    #kvm-simple-circuit .part { position:relative; background:var(--background); padding:4px; text-align:center; font-weight:500; }
+    #kvm-simple-circuit .value { display:block; font-weight:400; }
+    #kvm-simple-circuit .caption { color:var(--muted-foreground); }
+  </style>
+  <div role="img" aria-label="Four branches: black sleeve through R1 and LED2 to green ring 2; green ring 2 through R3 and LED1 to white ring 1; red tip through KEY1 and R2 to black sleeve; red tip through C1 to white ring 1. Repeated terminal labels are the same electrical net.">
+    <div class="branch">
+      <div class="terminal">Black<span class="contact">/ Sleeve</span></div>
+      <div class="path"><div class="part">R1<span class="value">1 kΩ</span></div><div class="part">LED2 →</div></div>
+      <div class="terminal">Green<span class="contact">/ Ring 2</span></div>
+    </div>
+    <div class="branch">
+      <div class="terminal">Green<span class="contact">/ Ring 2</span></div>
+      <div class="path"><div class="part">R3<span class="value">510 Ω</span></div><div class="part">LED1 →</div></div>
+      <div class="terminal">White<span class="contact">/ Ring 1</span></div>
+    </div>
+    <div class="branch">
+      <div class="terminal">Red<span class="contact">/ Tip</span></div>
+      <div class="path"><div class="part">KEY1<span class="value">button</span></div><div class="part">R2<span class="value">100 Ω</span></div></div>
+      <div class="terminal">Black<span class="contact">/ Sleeve</span></div>
+    </div>
+    <div class="branch">
+      <div class="terminal">Red<span class="contact">/ Tip</span></div>
+      <div class="path"><div class="part">C1<span class="value">100 nF</span></div></div>
+      <div class="terminal">White<span class="contact">/ Ring 1</span></div>
+    </div>
+  </div>
+  <div class="caption">Repeated labels are the same connection. LED arrows run from anode to cathode. Ground and supply are unverified.</div>
+</div>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KVM connected schematic</title>
+<style>
+body{margin:0;color:var(--foreground,CanvasText);font:15px/1.5 var(--font-sans,system-ui)}
+.connected-schematic{width:100%;height:auto;display:block}
+.connected-schematic text{fill:currentColor;font-family:system-ui;font-size:15px}
+.connected-schematic .wire{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.connected-schematic .node{fill:currentColor}
+</style>
+<body>
+<svg class="connected-schematic" viewBox="0 0 700 345" role="img" aria-label="Original connected layout: black sleeve through R1 and LED2 to green ring 2, then R3 and LED1 to white ring 1. Black sleeve also connects through R2 and KEY1 to red tip. C1 connects red tip to white ring 1.">
+<defs><marker id="connected-arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="currentColor"/></marker></defs>
+<g class="wire">
+<path d="M50 100H120 M180 100H240 M270 100H420 M480 100H540 M570 100H650"/>
+<rect x="120" y="89" width="60" height="22"/><rect x="420" y="89" width="60" height="22"/>
+<path d="M240 86L263 100L240 114Z M270 84V116 M263 100H270"/>
+<path d="M540 86L563 100L540 114Z M570 84V116 M563 100H570"/>
+<path d="M251 77L263 62" marker-end="url(#connected-arrow)"/><path d="M265 82L277 67" marker-end="url(#connected-arrow)"/>
+<path d="M551 77L563 62" marker-end="url(#connected-arrow)"/><path d="M565 82L577 67" marker-end="url(#connected-arrow)"/>
+<path d="M350 100V35 M50 100V260H180 M240 260H350 M400 260H580 M595 260H650V100"/>
+<rect x="180" y="249" width="60" height="22"/>
+<circle cx="350" cy="260" r="4"/><circle cx="400" cy="260" r="4"/>
+<path d="M354 257L394 235 M375 218V229 M580 239V281 M595 239V281 M530 260V298"/>
+</g>
+<g class="node"><circle cx="50" cy="100" r="4"/><circle cx="350" cy="100" r="4"/><circle cx="650" cy="100" r="4"/><circle cx="530" cy="260" r="4"/></g>
+<text x="15" y="52">Black / Sleeve</text><text x="295" y="20">Green / Ring 2</text><text x="565" y="52">White / Ring 1</text>
+<text x="118" y="151">R1 ≈ 1 kΩ</text><text x="234" y="151">LED2</text><text x="410" y="151">R3 ≈ 510 Ω</text><text x="535" y="151">LED1</text>
+<text x="171" y="223">R2 ≈ 100 Ω</text><text x="348" y="205">KEY1</text><text x="548" y="214">C1 ≈ 100 nF</text><text x="488" y="324">Red / Tip</text>
+</svg>
+</body>
+</html>

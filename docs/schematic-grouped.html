@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EXB01 reconstructed schematic</title><style>
+body{margin:0;color:var(--foreground,#222);font:15px/1.5 var(--font-sans,system-ui)}h2{font-size:20px;margin:0 0 6px}p{margin:8px 0}.muted{color:var(--muted-foreground,#666)}svg{width:100%;height:auto;display:block}svg text{fill:currentColor;font-family:system-ui;font-size:15px}.wire{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}.node{fill:currentColor}.note{padding:16px;border:1px solid var(--border,#aaa);border-radius:10px;margin-top:12px}ul{padding-left:22px}
+</style><body>
+<h2>Reconstructed EXB01 remote circuit</h2><p class="muted">KEY01-B60 V2 · 2024.09.26 · Unpowered measurements</p>
+<svg viewBox="0 0 700 470" role="img" aria-label="Button contacts red tip and black sleeve are grouped on the left. LED cathode contacts green ring 2 and white ring 1 are grouped on the right. Internal connections are unchanged.">
+<defs><marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="currentColor"/></marker></defs>
+<text x="10" y="22" style="font-size:13px">BUTTON CONTACTS</text><text x="505" y="22" style="font-size:13px">LED CATHODE CONTACTS</text>
+<g class="wire">
+<path d="M30 100H220 M280 100H420 M450 100H670"/>
+<rect x="220" y="89" width="60" height="22"/>
+<path d="M420 86L443 100L420 114Z M450 84V116 M443 100H450"/>
+<path d="M431 77L443 62" marker-end="url(#arrow)"/><path d="M445 82L457 67" marker-end="url(#arrow)"/>
+<path d="M600 100V175H160V220H250 M310 220H420 M450 220H670"/>
+<rect x="250" y="209" width="60" height="22"/>
+<path d="M420 206L443 220L420 234Z M450 204V236 M443 220H450"/>
+<path d="M431 197L443 182" marker-end="url(#arrow)"/><path d="M445 202L457 187" marker-end="url(#arrow)"/>
+<path d="M120 100V340H200 M260 340H350 M400 340H470V420H30 M470 420H550 M565 420H650V220"/>
+<rect x="200" y="329" width="60" height="22"/>
+<circle cx="350" cy="340" r="4"/><circle cx="400" cy="340" r="4"/>
+<path d="M354 337L394 315 M375 298V309 M550 399V441 M565 399V441"/>
+</g>
+<g class="node"><circle cx="120" cy="100" r="4"/><circle cx="600" cy="100" r="4"/><circle cx="650" cy="220" r="4"/><circle cx="470" cy="420" r="4"/>
+<circle cx="30" cy="100" r="4"/><circle cx="30" cy="420" r="4"/><circle cx="670" cy="100" r="4"/><circle cx="670" cy="220" r="4"/></g>
+<text x="10" y="74">Black / Sleeve</text><text x="563" y="74">Green / Ring 2</text>
+<text x="10" y="397">Red / Tip</text><text x="520" y="264">White / Ring 1</text>
+<text x="212" y="144">R1 ≈ 1 kΩ</text><text x="414" y="144">LED2</text>
+<text x="236" y="264">R3 ≈ 510 Ω</text><text x="414" y="264">LED1</text>
+<text x="189" y="310">R2 ≈ 100 Ω</text><text x="350" y="289">KEY1</text><text x="510" y="389">C1 ≈ 100 nF</text>
+</svg>
+<p class="muted">Layout groups the two button contacts on the left and the two LED cathode contacts on the right. Black/sleeve is not confirmed ground; white/ring 1 remains the ground candidate.</p>
+<p><b>Diode checks:</b> R1 A → LED2 → green/ring 2: 2.57 V.<br>R3 A → LED1 → white/ring 1: 2.56 V. Each LED lights separately.</p>
+<div class="note"><b>Mapped, with evidence limits</b><ul>
+<li>R1 = 992 Ω · R2 = 99.6 Ω · R3 = 508 Ω · C1 = 98.7 nF, measured in circuit.</li>
+<li>KEY1 joins its left/right nets when pressed; each side has two duplicate legs.</li>
+<li>Resistor-to-LED links are supported by resistance matching and individual diode-path illumination; direct opposite-face continuity was impractical.</li>
+</ul></div>
+<p class="muted">Green/ring 2 is an external midpoint, so the two LED branches need not carry equal current. No wire is assigned as ground or supply. KVM-side voltages, input numbering, and GPIO compatibility remain unknown. This is a reconstructed circuit, not a manufacturer schematic.</p>
+</body></html>

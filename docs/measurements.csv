@@ -1,0 +1,112 @@
+test,power_state,selected_input,button_state,probe_a,probe_b,mode,value,unit,notes
+contact_map,unplugged,,released,tip,red_wire,continuity,,,Owner-reported contact mapping; numeric continuity reading not supplied
+contact_map,unplugged,,released,ring_1,white_wire,continuity,,,Owner-reported contact mapping; numeric continuity reading not supplied
+contact_map,unplugged,,released,ring_2,green_wire,continuity,,,Owner-reported contact mapping; numeric continuity reading not supplied
+contact_map,unplugged,,released,sleeve,black_wire,continuity,,,Owner-reported contact mapping; numeric continuity reading not supplied
+button_resistance,unplugged,,released,tip_red,sleeve_black,resistance,,,Not yet reported
+button_resistance,unplugged,,pressed,tip_red,sleeve_black,resistance,101,ohm,Approximate owner-reported measurement; nominal 100 ohm series resistor inferred
+signal_voltage,powered,input_1,released,red_tip,white_ring_1_reference,DC_voltage,,,"PLANNED ONLY; white/ring 1 is provisional voltage reference, not verified ground"
+signal_voltage,powered,input_2,released,red_tip,white_ring_1_reference,DC_voltage,,,"PLANNED ONLY; white/ring 1 is provisional voltage reference, not verified ground"
+signal_voltage,powered,input_1,pressed,red_tip,white_ring_1_reference,DC_voltage,,,"PLANNED ONLY; white/ring 1 is provisional voltage reference, not verified ground"
+signal_voltage,powered,input_2,pressed,red_tip,white_ring_1_reference,DC_voltage,,,"PLANNED ONLY; white/ring 1 is provisional voltage reference, not verified ground"
+resistor_R1,unplugged,,,R1_end_1,R1_end_2,resistance,992,ohm,Owner-reported in-circuit reading: 0.992 kohm; button state not reported
+resistor_R2,unplugged,,,R2_end_1,R2_end_2,resistance,99.6,ohm,Owner-reported in-circuit reading: 99.6 ohm; button state not reported
+resistor_R3,unplugged,,,R3_end_1,R3_end_2,resistance,508,ohm,Owner-reported in-circuit reading: 0.508 kohm; button state not reported
+capacitor_C1,,,,C1_end_1,C1_end_2,capacitance,98.7,nF,Owner-reported; in-circuit workflow; isolation and power state not explicitly reconfirmed
+C1_A_to_red,,,released,C1_A_nearest_PCB_edge,red_tip,capacitance,97.5,nF,Owner clarified reading; in circuit; supersedes prior two conversational observations
+C1_A_to_red,,,pressed,C1_A_nearest_PCB_edge,red_tip,capacitance,97.5,nF,Owner clarified reading; in circuit; supersedes prior two conversational observations
+C1_A_to_black,,,released,C1_A_nearest_PCB_edge,black_sleeve,capacitance,0.15,nF,Owner clarified in-circuit reading; direct connections not established
+C1_A_to_black,,,pressed,C1_A_nearest_PCB_edge,black_sleeve,capacitance,97.5,nF,Owner clarified in-circuit reading; direct connections not established
+C1_B_to_red,,,released,C1_B,red_tip,resistance,0.5,ohm,Owner-reported near-zero resistance; direct connection at meter resolution
+C1_B_to_red,,,pressed,C1_B,red_tip,resistance,0.5,ohm,Owner-reported near-zero resistance; direct connection at meter resolution
+C1_A_to_white,,,released,C1_A_nearest_PCB_edge,white_ring_1,resistance,0.5,ohm,Owner-reported; white is a direct connection at meter resolution
+C1_A_to_white,,,pressed,C1_A_nearest_PCB_edge,white_ring_1,resistance,0.5,ohm,Owner-reported; white is a direct connection at meter resolution
+C1_A_to_green,,,released,C1_A_nearest_PCB_edge,green_ring_2,resistance,OL,,Owner-reported; white is a direct connection at meter resolution
+C1_A_to_green,,,pressed,C1_A_nearest_PCB_edge,green_ring_2,resistance,OL,,Owner-reported; white is a direct connection at meter resolution
+red_to_white,,,,red_tip,white,resistance,OL,,Owner-reported; released requested but button state not explicitly restated
+red_to_green,,,,red_tip,green,resistance,OL,,Owner-reported; released requested but button state not explicitly restated
+R2_A_to_red,,,pressed,R2_A,red,resistance,0.7,ohm,Owner-reported; R2 A physical orientation not specified
+R2_A_to_red,,,released,R2_A,red,resistance,OL,,Owner-reported; R2 A physical orientation not specified
+R2_A_to_black,,,pressed,R2_A,black,resistance,100.4,ohm,Owner-reported; R2 A physical orientation not specified
+R2_A_to_black,,,released,R2_A,black,resistance,100.4,ohm,Owner-reported; R2 A physical orientation not specified
+R2_B_to_red,,,pressed,R2_B,red_tip,resistance,100.5,ohm,"Owner explicitly clarified probe pair as R2 B and red, not black"
+R2_B_to_red,,,released,R2_B,red_tip,resistance,OL,,"Owner explicitly clarified probe pair as R2 B and red, not black"
+R2_B_to_black,,,pressed,black_sleeve,R2_B,resistance,0.7-1,ohm,Owner-reported range; direct connection at meter resolution
+R2_B_to_black,,,released,black_sleeve,R2_B,resistance,0.7-1,ohm,Owner-reported range; direct connection at meter resolution
+R1_A_to_red,,,pressed,red_tip,R1_A,resistance,1075,ohm,Owner reports 1.075 kohm pressed only; exact released display not supplied
+R1_B_to_red,,,pressed,R1_B,red_tip,resistance,102,ohm,Owner-reported; released reading not supplied
+R1_A_to_black,,,pressed,black_sleeve,R1_A,resistance,0.995,ohm,Earlier literal report; pressed units superseded by explicit 0.995 kohm clarification; released units not explicitly restated
+R1_A_to_black,,,released,black_sleeve,R1_A,resistance,0.995,ohm,Earlier literal report; pressed units superseded by explicit 0.995 kohm clarification; released units not explicitly restated
+R1_B_to_black,,,pressed,black_sleeve,R1_B,resistance,0.5-1.0,ohm,Reported literally; R1 A units require confirmation due to inconsistent prior measurements
+R1_B_to_black,,,released,black_sleeve,R1_B,resistance,0.5-1.0,ohm,Reported literally; R1 A units require confirmation due to inconsistent prior measurements
+R1_A_to_red,,,pressed,R1_A,red,resistance,1057,ohm,Latest explicit owner reading; reported in kohm
+R1_A_to_black,,,pressed,R1_A,black,resistance,995,ohm,Latest explicit owner reading; reported in kohm
+R1_A_to_white,,,pressed,R1_A,white_ring_1,resistance,OL,,Owner-reported in both button states; LED paths not excluded
+R1_A_to_white,,,released,R1_A,white_ring_1,resistance,OL,,Owner-reported in both button states; LED paths not excluded
+R1_A_to_green,,,pressed,R1_A,green_ring_2,resistance,OL,,Owner-reported in both button states; LED paths not excluded
+R1_A_to_green,,,released,R1_A,green_ring_2,resistance,OL,,Owner-reported in both button states; LED paths not excluded
+R3_A_to_green,,,pressed,green_ring_2,R3_A,resistance,500,ohm,Owner explicitly reported both ends and stable button states; A originally reported as 0.5 kohm
+R3_A_to_green,,,released,green_ring_2,R3_A,resistance,500,ohm,Owner explicitly reported both ends and stable button states; A originally reported as 0.5 kohm
+R3_B_to_green,,,pressed,green_ring_2,R3_B,resistance,0.5,ohm,Owner explicitly reported both ends and stable button states; A originally reported as 0.5 kohm
+R3_B_to_green,,,released,green_ring_2,R3_B,resistance,0.5,ohm,Owner explicitly reported both ends and stable button states; A originally reported as 0.5 kohm
+R3_A_to_red,,,,red_tip,R3_A,resistance,OL,,Owner reported both R3 ends; released setup requested; button state not explicitly restated
+R3_B_to_red,,,,red_tip,R3_B,resistance,OL,,Owner reported both R3 ends; released setup requested; button state not explicitly restated
+R1_A_white_diode,,,,R1_A,white_ring_1,diode,OL,,"Both polarities confirmed; probe_a is red meter probe, probe_b black meter probe; insufficient test voltage remains possible"
+R1_A_white_diode,,,,white_ring_1,R1_A,diode,OL,,"Both polarities confirmed; probe_a is red meter probe, probe_b black meter probe; insufficient test voltage remains possible"
+red_tip_to_R1_A_diode,,,released,red_tip,R1_A,diode,0,,probe_a red meter probe; probe_b black meter probe; released 0 units/settling unconfirmed; pressed resistive path can explain voltage; superseded by owner confirmation of OL after waiting
+red_tip_to_R1_A_diode,,,pressed,red_tip,R1_A,diode,0.762,V,probe_a red meter probe; probe_b black meter probe; released 0 units/settling unconfirmed; pressed resistive path can explain voltage
+red_tip_to_R1_A_diode,,,released,red_tip,R1_A,diode,OL,,"Corrected settled reading; probe_a red meter probe, probe_b black meter probe"
+LED1_direct_diode,,,,LED1_plus_marked_pad,LED1_opposite_pad,diode,2.56,V,Each LED lights separately; probe orientation follows requested setup but not explicitly restated
+LED2_direct_diode,,,,LED2_plus_marked_pad,LED2_opposite_pad,diode,2.56,V,Each LED lights separately; probe orientation follows requested setup but not explicitly restated
+LED1_minus_to_plug,,,,white_ring_1,LED1_minus,resistance,0.7,ohm,Owner-reported; direct connection at meter resolution
+LED2_minus_to_plug,,,,green_ring_2,LED2_minus,resistance,0.9,ohm,Owner-reported; direct connection at meter resolution
+LED1_plus_to_red,,,,LED1_plus,red_tip,resistance,OL,,UNRELIABLE: owner reports possible J1 disconnection during this test block; exclude from schematic evidence. Owner-reported in response to unplugged/released Ω-mode request
+LED1_plus_to_green,,,,LED1_plus,green_ring_2,resistance,OL,,UNRELIABLE: owner reports possible J1 disconnection during this test block; exclude from schematic evidence. Owner-reported in response to unplugged/released Ω-mode request
+LED1_plus_to_black,,,,LED1_plus,black_sleeve,resistance,OL,,UNRELIABLE: owner reports possible J1 disconnection during this test block; exclude from schematic evidence. Single-pair owner confirmation; unplugged/released Ω-mode setup requested
+LED1_minus_to_plug_recheck,,,,LED1_minus,white_ring_1,resistance,OL,,UNRELIABLE: owner reports possible J1 disconnection during this test block; exclude from schematic evidence. Conflicts with earlier 0.7 ohm; LED mapping unresolved pending contact/cable/J1 checks
+LED1_plus_to_black_retest,,,released,LED1_plus,black_sleeve,resistance,OL,,Fresh single-pair response after J1 reseating instruction; distinct from unreliable earlier block
+LED2_plus_to_black_retest,,,released,LED2_plus,black_sleeve,resistance,992,ohm,Fresh response after J1 reseating checkpoint; reported as 0.992 kohm; matches R1
+LED1_plus_to_green_retest,,,released,LED1_plus,green_ring_2,resistance,500,ohm,Fresh response after J1 reseating checkpoint; reported as 0.5 kohm; matches R3 approximately
+LED2_plus_to_red_retest,,,pressed,LED2_plus,red_tip,resistance,1100,ohm,Fresh post-J1-check consistency measurement; pressed reported as 1.1 kohm
+LED2_plus_to_red_retest,,,released,LED2_plus,red_tip,resistance,OL,,Fresh post-J1-check consistency measurement; pressed reported as 1.1 kohm
+KEY1_left_to_red,,,pressed,KEY1_tested_left_leg,red_tip,resistance,0.7,ohm,Upper-left requested; owner said left side; both left legs not independently confirmed
+KEY1_left_to_red,,,released,KEY1_tested_left_leg,red_tip,resistance,OL,,Upper-left requested; owner said left side; both left legs not independently confirmed
+KEY1_left_to_black,,,pressed,KEY1_tested_left_leg,black_sleeve,resistance,100,ohm,Same tested left leg as preceding red/tip measurement
+KEY1_left_to_black,,,released,KEY1_tested_left_leg,black_sleeve,resistance,100,ohm,Same tested left leg as preceding red/tip measurement
+KEY1_right_to_red,,,pressed,KEY1_tested_right_leg,red_tip,resistance,0.7,ohm,Owner reports right-side leg stable across button states
+KEY1_right_to_red,,,released,KEY1_tested_right_leg,red_tip,resistance,0.7,ohm,Owner reports right-side leg stable across button states
+KEY1_left_duplicates,,,released,KEY1_upper_left,KEY1_lower_left,resistance,0.1,ohm,Owner reports both same-side pairs; LED face with LEDs at bottom
+KEY1_right_duplicates,,,released,KEY1_upper_right,KEY1_lower_right,resistance,0.1,ohm,Owner reports both same-side pairs; LED face with LEDs at bottom
+R1_A_to_green_diode,,,released,R1_A,green_ring_2,diode,2.57,V,"LED2 lights; probe_a red meter probe, probe_b black meter probe"
+R3_A_to_white_diode,,,released,R3_A,white_ring_1,diode,2.56,V,"LED1 lights; probe_a red meter probe, probe_b black meter probe"
+planned_black_sleeve_voltage,powered,input_1,released,black_sleeve,white_ring_1_reference,DC_voltage,,,PLANNED ONLY; record signed voltage and lit LED; reference not verified ground
+planned_black_sleeve_voltage,powered,input_2,released,black_sleeve,white_ring_1_reference,DC_voltage,,,PLANNED ONLY; record signed voltage and lit LED; reference not verified ground
+planned_green_ring_2_voltage,powered,input_1,released,green_ring_2,white_ring_1_reference,DC_voltage,,,PLANNED ONLY; record signed voltage and lit LED; reference not verified ground
+planned_green_ring_2_voltage,powered,input_2,released,green_ring_2,white_ring_1_reference,DC_voltage,,,PLANNED ONLY; record signed voltage and lit LED; reference not verified ground
+black_sleeve_to_white_ring_1_voltage_unloaded,KVM_powered_J1_PCB_disconnected,,,black_sleeve,white_ring_1,DC_voltage,3.334,V,"Actual owner reading; probe_a red meter probe, probe_b black meter probe; unloaded cable-side J1; selection not reported"
+green_ring_2_to_white_ring_1_voltage_unloaded,KVM_powered_J1_PCB_disconnected,,,green_ring_2,white_ring_1,DC_voltage,0.0311,V,Actual owner reading reported as 31.1 mV; unloaded; selection not reported; before requested front-panel change
+green_ring_2_to_white_ring_1_voltage_unloaded,KVM_powered_J1_PCB_disconnected,,,green_ring_2,white_ring_1,DC_voltage,3.34,V,Actual owner reading after requested front-panel selection change; prior state 31.1 mV; exact PC mapping unknown
+red_tip_to_white_ring_1_voltage_unloaded,KVM_powered_J1_PCB_disconnected,,PCB_disconnected,red_tip,white_ring_1,DC_voltage,0.003,V,Actual owner reading reported as 3 mV; no KEY1 connected; selection not separately restated
+red_tip_to_white_ring_1_voltage_loaded,KVM_powered_original_remote_connected,,released,C1_B_red_tip,C1_A_white_ring_1,DC_voltage,0,V,"Actual owner reading; probe_a red meter probe, probe_b black meter probe; first loaded-remote measurement"
+red_tip_to_white_ring_1_voltage_loaded,KVM_powered_original_remote_connected,,pressed,C1_B_red_tip,C1_A_white_ring_1,DC_voltage,2.86,V,"Actual owner reading; probe_a red meter probe, probe_b black meter probe; first loaded-remote measurement"
+black_sleeve_to_white_ring_1_voltage_loaded,KVM_powered_original_remote_connected,,released,R2_B_black_sleeve,C1_A_white_ring_1,DC_voltage,3.3,V,"Actual owner readings; loaded supply; probe_a red meter probe, probe_b black meter probe"
+black_sleeve_to_white_ring_1_voltage_loaded,KVM_powered_original_remote_connected,,pressed,R2_B_black_sleeve,C1_A_white_ring_1,DC_voltage,3.1,V,"Actual owner readings; loaded supply; probe_a red meter probe, probe_b black meter probe"
+R2_voltage_loaded,KVM_powered_original_remote_connected,,pressed,R2_B_black_sleeve,R2_A_button_side,DC_voltage,0.217,V,"Actual owner reading 217 mV; probe_a red meter probe, probe_b black meter probe"
+R2_current_derived,KVM_powered_original_remote_connected,,pressed,R2,,derived_ohms_law,2.179,mA,"DERIVED, not directly measured: 0.217 V / 99.6 ohm; held-press condition"
+green_ring_2_to_white_ring_1_voltage_loaded,KVM_powered_original_remote_connected,LED2_on_PC_unknown,,R3_B_green_ring_2,C1_A_white_ring_1,DC_voltage,0.0008,V,Actual owner reading reported as 0.8 mV; LED2 on; PC identity not supplied
+green_ring_2_to_white_ring_1_voltage_loaded_recheck,KVM_powered_original_remote_connected,LED2_on_PC_unknown,,R3_B_green_ring_2,C1_A_white_ring_1,DC_voltage,0.0021,V,Actual owner reading 2.1 mV; before reported button press; held/released not explicitly stated
+green_ring_2_to_white_ring_1_voltage_loaded_recheck,KVM_powered_original_remote_connected,LED1_on_PC_unknown,,R3_B_green_ring_2,C1_A_white_ring_1,DC_voltage,0.0021,V,Actual owner reading 2.1 mV; after reported button press; whether still held unresolved; no loaded HIGH confirmed
+green_ring_2_to_white_ring_1_voltage_loaded_latest,KVM_powered_original_remote_connected,LED2_on_PC_unknown,,R3_B_green_ring_2,C1_A_white_ring_1,DC_voltage,0.033,V,Actual latest reading 33 mV; LED2 on; earlier inconsistent 2.1 mV readings retained
+green_ring_2_to_white_ring_1_voltage_loaded_latest,KVM_powered_original_remote_connected,LED1_on_PC_unknown,,R3_B_green_ring_2,C1_A_white_ring_1,DC_voltage,3,V,Actual latest reading 3 V; LED1 on after button press; fully released/settled setup requested but not explicitly restated; earlier inconsistent 2.1 mV readings retained
+red_tip_to_white_ring_1_voltage_loaded_held_recheck,KVM_powered_original_remote_connected,,pressed,C1_B_red_tip,C1_A_white_ring_1,DC_voltage,2.86,V,Owner explicitly confirms steady voltage while held and zero on release; exact LED state not reported
+red_tip_to_white_ring_1_voltage_loaded_held_recheck,KVM_powered_original_remote_connected,,released,C1_B_red_tip,C1_A_white_ring_1,DC_voltage,0,V,Owner explicitly confirms steady voltage while held and zero on release; exact LED state not reported
+red_tip_to_white_ring_1_voltage_loaded_four_state,KVM_powered_original_remote_connected,LED1_on,released,C1_B_red_tip,C1_A_white_ring_1,DC_voltage,0,V,"Actual probes explicitly confirmed by owner; button-input reading, not requested supply test; owner considers most accurate set"
+red_tip_to_white_ring_1_voltage_loaded_four_state,KVM_powered_original_remote_connected,switching_toward_LED2,pressed,C1_B_red_tip,C1_A_white_ring_1,DC_voltage,2.895,V,"Actual probes explicitly confirmed by owner; button-input reading, not requested supply test; owner considers most accurate set"
+red_tip_to_white_ring_1_voltage_loaded_four_state,KVM_powered_original_remote_connected,LED2_on,released,C1_B_red_tip,C1_A_white_ring_1,DC_voltage,0,V,"Actual probes explicitly confirmed by owner; button-input reading, not requested supply test; owner considers most accurate set"
+red_tip_to_white_ring_1_voltage_loaded_four_state,KVM_powered_original_remote_connected,switching_toward_LED1,pressed,C1_B_red_tip,C1_A_white_ring_1,DC_voltage,2.861,V,"Actual probes explicitly confirmed by owner; button-input reading, not requested supply test; owner considers most accurate set"
+black_sleeve_to_white_ring_1_voltage_loaded_four_state,KVM_powered_original_remote_connected,LED1_on,released,R2_B_black_sleeve,C1_A_white_ring_1,DC_voltage,3.339,V,"State-labelled supply comparison; positive R2 B / black-sleeve, reference C1 A / white-ring1"
+black_sleeve_to_white_ring_1_voltage_loaded_four_state,KVM_powered_original_remote_connected,switching_toward_LED2,pressed,R2_B_black_sleeve,C1_A_white_ring_1,DC_voltage,3.117,V,"State-labelled supply comparison; positive R2 B / black-sleeve, reference C1 A / white-ring1"
+black_sleeve_to_white_ring_1_voltage_loaded_four_state,KVM_powered_original_remote_connected,LED2_on,released,R2_B_black_sleeve,C1_A_white_ring_1,DC_voltage,3.282,V,"State-labelled supply comparison; positive R2 B / black-sleeve, reference C1 A / white-ring1"
+black_sleeve_to_white_ring_1_voltage_loaded_four_state,KVM_powered_original_remote_connected,switching_toward_LED1,pressed,R2_B_black_sleeve,C1_A_white_ring_1,DC_voltage,3.080,V,"State-labelled supply comparison; positive R2 B / black-sleeve, reference C1 A / white-ring1"
+R3_A_to_LED1_anode_direct,remote_unplugged_from_KVM,,,R3_A,LED1_plus,resistance,0.1,ohm,New direct opposite-face measurement after independent review; closes previously inferred resistor-to-LED link; J1 state not reported or required
+R1_A_to_LED2_anode_direct,remote_unplugged_from_KVM,,,R1_A,LED2_plus,resistance,0.1,ohm,New direct opposite-face measurement after independent review; closes previously inferred resistor-to-LED link; J1 state not reported or required
