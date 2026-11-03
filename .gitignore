@@ -3,4 +3,3 @@
 .venv/
 secrets.yaml
 secrets.yml
-docs/photos/*.jpg
