@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 810" role="img" aria-labelledby="title desc">
+  <title id="title">Preferred standalone KVM controller, revision A</title>
+  <desc id="desc">Proposed eight-component interface. XIAO D1 drives an AQY212EH PhotoMOS through 150 ohms with a 10 kilohm pull-down. Its contact joins black sleeve to red tip through 100 ohms. A 100 nanofarad capacitor joins red tip to common. Green ring 2 drives an AO3400A gate with a 100 kilohm pull-down; its source is common and its drain joins XIAO D2 through 1 kilohm. Enable D2's internal pull-up. White ring 1 joins XIAO ground, pending verification. Not bench validated.</desc>
+  <style>
+    text{fill:currentColor;font:16px system-ui,sans-serif}
+    .heading{font-size:19px;font-weight:600}
+    .small{font-size:14px}
+    .wire,.part{stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .node{fill:currentColor}
+    .optical{stroke:currentColor;stroke-width:1.5;stroke-dasharray:4 5;fill:none}
+  </style>
+  <defs>
+    <g id="ground" class="wire"><path d="M0 0v8m-12 0h24m-8 5h-16m4 5h8"/></g>
+  </defs>
+  <text x="12" y="25" class="heading">Button control</text>
+  <text x="12" y="50" class="small">D1 HIGH = press · LOW / high impedance = release</text>
+  <g class="part">
+    <rect x="290" y="100" width="180" height="200" rx="0"/>
+    <rect x="165" y="145" width="70" height="20"/>
+    <rect x="69" y="205" width="22" height="50"/>
+    <rect x="555" y="130" width="65" height="20"/>
+  </g>
+  <g class="wire">
+    <path d="M16 155h149m70 0h55m-210 0v50m0 50v25"/>
+    <path d="M290 250h-70v30"/>
+    <path d="M470 140h85m65 0h100M470 240h250"/>
+    <path d="M665 240v40m-16 0h32m-32 12h32m-16 0v36"/>
+    <path d="M470 140h-32v25m0 50v25h32M438 215l-18-40"/>
+    <path d="M290 155h28m0-12 22 12-22 12zM344 143v24M340 155h15v95h-65"/>
+  </g>
+  <path class="optical" d="M370 187h34m-9-5 9 5-9 5"/>
+  <circle class="node" cx="80" cy="155" r="3.5"/>
+  <circle class="node" cx="665" cy="240" r="3.5"/>
+  <use href="#ground" x="80" y="280"/>
+  <use href="#ground" x="220" y="280"/>
+  <use href="#ground" x="665" y="328"/>
+  <text x="16" y="115">XIAO D1 / GPIO1</text>
+  <text x="165" y="133" class="small">R102 · 150 Ω</text>
+  <text x="105" y="222" class="small">R103</text>
+  <text x="105" y="244" class="small">10 kΩ</text>
+  <text x="380" y="86" text-anchor="middle">U101 · AQY212EH</text>
+  <text x="302" y="126" class="small">1 anode</text>
+  <text x="300" y="279" class="small">2 cathode</text>
+  <text x="444" y="126" class="small">4</text>
+  <text x="444" y="266" class="small">3</text>
+  <text x="378" y="326" text-anchor="middle" class="small">Normally-open contact</text>
+  <text x="555" y="118" class="small">R101 · 100 Ω</text>
+  <text x="720" y="92" text-anchor="end">Black/sleeve</text>
+  <text x="720" y="216" text-anchor="end">Red/tip</text>
+  <text x="645" y="370" text-anchor="middle" class="small">C101 · 100 nF</text>
+  <text x="12" y="418" class="heading">Selection sensing</text>
+  <text x="12" y="443" class="small">Green/ring 2 HIGH → D2 LOW · LOW → D2 HIGH</text>
+  <text x="12" y="468" class="small">Enable D2's internal pull-up in firmware.</text>
+  <g class="part">
+    <rect x="300" y="535" width="150" height="105"/>
+    <rect x="69" y="608" width="22" height="50"/>
+    <rect x="475" y="511" width="60" height="20"/>
+    <rect x="629" y="479" width="22" height="32" stroke-dasharray="4 4"/>
+  </g>
+  <g class="wire">
+    <path d="M16 580h284m-220 0v28m0 50v17"/>
+    <path d="M640 460v19m0 32v10M375 535v-14h100m60 0h185"/>
+    <path d="M375 640v35"/>
+  </g>
+  <circle class="node" cx="80" cy="580" r="3.5"/>
+  <circle class="node" cx="640" cy="521" r="3.5"/>
+  <use href="#ground" x="80" y="675"/>
+  <use href="#ground" x="375" y="675"/>
+  <text x="16" y="556">Green/ring 2</text>
+  <text x="105" y="627" class="small">R104 · 100 kΩ</text>
+  <text x="610" y="484" text-anchor="end" class="small">Internal pull-up</text>
+  <text x="610" y="505" text-anchor="end" class="small">~45 kΩ typical</text>
+  <text x="640" y="463" text-anchor="end">XIAO 3V3</text>
+  <text x="720" y="551" text-anchor="end">XIAO D2 / GPIO2</text>
+  <text x="475" y="578" class="small">R105 · 1 kΩ</text>
+  <text x="312" y="584" class="small">G · 1</text>
+  <text x="375" y="555" text-anchor="middle" class="small">D · 3</text>
+  <text x="375" y="627" text-anchor="middle" class="small">S · 2</text>
+  <text x="375" y="587" text-anchor="middle" class="small">Q101</text>
+  <text x="375" y="609" text-anchor="middle" class="small">AO3400A</text>
+  <text x="12" y="735" class="heading">Common reference</text>
+  <g class="wire"><path d="M180 758h270"/></g>
+  <text x="12" y="764">White/ring 1</text>
+  <use href="#ground" x="450" y="758"/>
+  <text x="480" y="764">XIAO GND</text>
+  <text x="12" y="805" class="small">Proposed ground bond: verify before KVM connection. All ground symbols join here.</text>
+</svg>

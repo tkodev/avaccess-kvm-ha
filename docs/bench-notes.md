@@ -6,11 +6,15 @@ For a measurement-only compilation, see [actual readings](readings.md), split in
 
 ## Current handoff
 
+Owner preference: a new minimal board or XIAO with control and electrical status sensing, without pass-through, original remote PCB, LEDs or manual buttons. Minimize supporting components subject to electrical validation. See [controller solutions](solutions.md); earlier remote-PCB/optical-sensing proposals remain alternatives.
+
+The [revision A controller schematic](controller-schematic.md) now records a proposed eight-component implementation and pin assignments. It has not been built or measured. The shared reference, internal status pull-up and removal of original LED loads remain validation items. No new owner readings are added by this design work.
+
 Offline tracing and planned initial live characterization are complete. Use the consolidated [actual readings](readings.md), [schematic](schematic.md), and [build plan](bring-up.md). Entries below are chronological and include superseded hypotheses and excluded readings.
 
 Current measured behavior: black/sleeve supplies approximately 3.3 V relative to white/ring 1, with a roughly 0.2 V drop during a held press. Green/ring 2 is LOW with LED2 and approximately 3 V with LED1, persisting while LED1 is lit. Red/tip is 0 V released and 2.895 V held toward LED2 / 2.861 V held toward LED1. Pressing connects red/tip through R2 (~100 Ω) to black/sleeve; direct R2 voltage measurement gives an estimated 2.18 mA press current.
 
-The owner's GPIO-LOW method on another device does not reproduce this active-high input. Final button driver, conditioned status input, power arrangement and firmware are not implemented. Evaluate input thresholds, removed-remote loading, default release and power sequencing during prototype design/validation. Keep PC labels as LED1/HIGH and LED2/LOW for now.
+The owner's GPIO-LOW method on another device does not reproduce this active-high input. Final button driver, conditioned status input, power arrangement and firmware are not implemented. Evaluate input thresholds, removed-remote loading, default release and power sequencing during prototype design/validation. Keep PC labels as LED1/HIGH and LED2/LOW for now. The [interface protection note](interface-protection.md) records the remaining checks and minimal-parts candidate; it adds no physical readings.
 
 ## Goal and decisions
 

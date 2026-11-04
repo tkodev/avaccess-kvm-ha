@@ -46,10 +46,12 @@ The 2.18 mA steady current does not bound C1 charging current. An ideal 3.3 V so
 
 ## Interface safety boundary
 
+The proposed new controller is documented separately in the [revision A schematic and BOM](controller-schematic.md). This file continues to describe the measured original remote.
+
 No direct GPIO interface is approved or implemented. Matching the passive remote schematic does not establish input thresholds, power-off tolerance, supply capacity, status loading limits or startup behavior.
 
-The recommended first prototype preserves the remote PCB and its passive/LED loads, using an independently powered, normally-open isolated contact across KEY1. Original R2 then remains in circuit: do not add another 100 Ω merely for a KEY1-parallel closure. A standalone red/tip-to-black/sleeve replacement needs R2's function exactly once.
+The independent review recommended a prototype preserving the remote PCB and its passive/LED loads, using an independently powered, normally-open isolated contact across KEY1. This remains a fallback. The owner's preferred direction is a new minimal board with control and electrical status sensing, without the remote PCB, LEDs or manual buttons; see [controller solutions](solutions.md). Neither interface has been validated. On a retained PCB, original R2 remains in circuit: do not add another 100 Ω merely for a KEY1-parallel closure. A standalone red/tip-to-black/sleeve replacement needs R2's function exactly once.
 
 Optical observation of the original LEDs can avoid an electrical status connection. An electrically connected receiver needs explicit loading and power-off protection analysis. Removing the original LED branches/C1 is a separate change requiring validation.
 
-A direct GPIO HIGH or high-side driver was an earlier conditional proposal, not validated wiring. The owner's GPIO-LOW technique does not emulate this active-high press. Review the [prototype plan](bring-up.md) and independent safety findings before selecting parts or making any controller connection.
+A direct GPIO HIGH or high-side driver was an earlier conditional proposal, not validated wiring. The owner's GPIO-LOW technique does not emulate this active-high press. Review [interface protection](interface-protection.md), the [prototype plan](bring-up.md) and independent safety findings before selecting parts or making any controller connection.

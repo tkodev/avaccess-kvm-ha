@@ -12,9 +12,15 @@ Do not characterize current limits by shorting, overloading or arbitrary resisto
 
 ## 2. Choose the prototype architecture
 
-The owner's final controller replaces the original external remote; no pass-through is required. Recommended first prototype: reuse the remote PCB inside the controller to preserve R1/R2/R3/C1 and LED loading, and add an isolated normally-open contact across KEY1. Separate ESP power and optical LED sensing can avoid a galvanic control/status connection. This is a recommendation, not a selected part or validated assembly.
+Use [controller solutions](solutions.md) as the source for the owner's preferred architecture and alternatives. See [interface protection](interface-protection.md) for powered-off, startup, loading and transient checks. These are interface design requirements, not additional measured properties of the KVM.
 
-Across KEY1, existing R2 remains in circuit; do not double its resistance. If building a complete replacement, reproduce the measured passive network initially and implement red/tip-to-black/sleeve closure with R2's ~100 Ω function exactly once. Validate any omitted LED/capacitor load separately.
+The owner's preferred controller replaces the original remote with a new board or XIAO plus minimal interface parts. It has no pass-through, original remote PCB, indicator LEDs or manual buttons. Prioritize a default-off button driver and protected electrical status sensing. Bare GPIO remains conditional; revision A supplies the proposed interface for evaluation.
+
+The [revision A schematic](controller-schematic.md) now specifies a proposed circuit and BOM for this evaluation: PhotoMOS closure and MOSFET sensing, with the XIAO's internal status pull-up and a series GPIO resistor. Treat its power-state calculations as design evidence, not physical test results.
+
+Remote-PCB reuse with isolated KEY1 closure remains an alternative prototype that preserves known loading. Separate ESP power and optical LED sensing can avoid a galvanic control/status connection, but this is not the preferred final form.
+
+Across KEY1 on a retained remote PCB, existing R2 remains in circuit; do not double its resistance. For the preferred new board, preserve R2's ~100 Ω function exactly once in a red/tip-to-black/sleeve closure. Treat the measured passive network as the comparison baseline. Omission of R1/R3, LEDs or C1 requires separate validation; retaining C1 does not require retaining the original board.
 
 Select actual contact/driver parts from datasheets, checking on-resistance, off leakage, transient current, voltage, isolation, default state and failure modes. Steady button current is about 2.18 mA; capacitor charging may require a larger transient capability. Firmware high impedance alone does not establish electrical power-off isolation.
 
@@ -32,13 +38,13 @@ An electrically connected feedback receiver needs validation at status LOW/HIGH,
 
 Only after disconnected checks pass, inspect the assembly again, insulate joints, provide strain relief and connect with the relevant power sources removed. Avoid live TRRS insertion/removal and never use partial insertion for probing.
 
-Initially retain the original load and test one bounded isolated press within previously observed working durations. Confirm one selection change and release. Observe LED1/HIGH and LED2/LOW feedback and manual front-panel changes. Map PC names later. Do not search destructive limits on the KVM.
+Test one bounded press using the validated interface within previously observed working durations. Confirm one selection change and release. Check HIGH/LOW status feedback and manual KVM front-panel changes; no LEDs or buttons are required on the new controller. If evaluating the remote-PCB fallback, initially retain its original load and use the isolated contact. Map PC names later. Do not search destructive limits on the KVM.
 
 If further waveform checks are essential, use suitable high-impedance differential/isolated equipment. Do not attach an earthed scope ground to an unverified node. Keep MM700 leads in COM/VΩ for voltage tests, use ordinary DC volts rather than Lo Z, and never use resistance/diode/capacitance modes on a powered circuit or place an ammeter across a signal.
 
 ## 5. ESPHome after interface validation
 
-No final GPIO assignment or firmware is selected. Candidate XIAO pins require board-revision/datasheet confirmation and verified startup behavior. One press command and one binary status may suffice; PC names remain deferred.
+Revision A proposes D1/GPIO1 for the press command and D2/GPIO2 for inverted status. Confirm the board revision and startup behavior. Enable D2's internal pull-up before interpreting it; feedback is unknown before configuration. No firmware is implemented. One press command and one binary status may suffice; PC names remain deferred. Without separate evidence of KVM power, a HIGH GPIO reading does not distinguish the original LED2 state from a disconnected/powered-off KVM.
 
 Use a momentary Toggle input command, reject overlap and wait for settled feedback. A roughly 200 ms pulse is only an initial prototype trial, not a measured B10 timing requirement. For explicit selection, read stable feedback, press once if needed, then confirm with a timeout. Treat unsettled state as unknown and avoid automatic toggle retries. Selection feedback does not establish PC/video readiness.
 

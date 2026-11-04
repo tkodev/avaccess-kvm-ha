@@ -29,20 +29,22 @@ Searches included `AV Access iDock B10 ESPHome home assistant remote switch pino
 - Rear: four cable conductors appear to enter a small connector; `R1`, `R2`, `R3`, and `C1` are visible. The owner identifies the PCB as `KEY01-B60 V2`, dated `2024.09.26`. This corrects the initial photo interpretation of the marking.
 - No controller IC is visible on either photographed side. A passive circuit is plausible.
 - Two resistors may limit LED current; another resistor and the capacitor may serve the button circuit. Their roles and values cannot be established from these photos.
-- Later owner measurements map red = tip, white = ring 1, green = ring 2, black = sleeve. Pressed red/tip-to-black/sleeve resistance is approximately 101 Ω. Subsequent offline tracing established the functional circuit and in-circuit component values; operating wire roles and voltages remain unverified. See the current [schematic](schematic.md) and chronological [bench notes](bench-notes.md).
+- Later owner measurements map red/tip, white/ring 1, green/ring 2 and black/sleeve. Pressed red/tip-to-black/sleeve resistance is approximately 101 Ω. Subsequent offline tracing and live measurements established the functional circuit, component values and normal powered behavior. Interface limits remain unverified. See the current [schematic](schematic.md) and chronological [bench notes](bench-notes.md).
 
 ## Interface options
+
+Current decision: prioritize a new minimal board or XIAO with protected control and electrical sensing, without the remote PCB, pass-through, LEDs or manual buttons. See [controller solutions](solutions.md) for the preferred design and alternatives. The following list includes earlier approaches.
 
 1. **Standalone CTL controller:** selected by the owner. Replaces the EXB01 while connected; no simultaneous original remote and no pass-through. Measure the original circuit first, then reproduce its press behavior and sense selection state.
 2. **Tap the remote PCB internally:** easiest way to access the actual switch contacts. Solder an isolated closure across the two distinct switch nets. This avoids recreating any cable-side resistor network, but modifies the remote and needs strain relief.
 3. **Modify the KVM internally:** unnecessary unless external access proves unsuitable. The remote already exposes the required human control and indicators.
 4. **Mechanical button pusher:** avoids electrical reverse engineering, but adds bulk and does not itself report the active input.
 
-The owner has successfully used GPIO-low button emulation on another device. Later tracing here suggests a different operating model: black/sleeve may be positive supply, white/ring 1 ground, green/ring 2 one complementary LED-status output, and red/tip an active-high button input. These assignments remain hypotheses pending powered measurements.
+The owner has successfully used GPIO-low button emulation on another device. Powered measurements here support a different operating model: black/sleeve supplies approximately 3.3 V relative to white/ring 1, green/ring 2 reports selection state, and red/tip is an active-high button input. Compatibility of white/ring 1 with ESP32/USB ground remains unverified.
 
-If confirmed, a LOW pulse would not reproduce the press. A GPIO HIGH through 100 Ω with high-impedance release is only a candidate if voltage, current and power-state limits permit. Otherwise evaluate a high-side driver or isolated closure reproducing red/tip-to-black/sleeve through approximately 100 Ω. See the [current build plan](bring-up.md); the early open-drain-sink proposal is superseded by this conditional design.
+A LOW pulse would not reproduce the measured press. A GPIO HIGH through 100 Ω with high-impedance release remains an unvalidated candidate requiring voltage, current and power-state analysis. An isolated KEY1 closure with the original PCB preserves R2 and the other loads, but is now a prototype/fallback option rather than the owner's preferred final form. See [interface protection](interface-protection.md) and the [current build plan](bring-up.md); the early open-drain-sink proposal is superseded.
 
-For feedback, characterize green/ring 2 relative to the verified reference. If the binary-status interpretation is confirmed, one conditioned input may report both selections. Check whether removing the original remote and LED loads changes the signal. Select conditioning from measured levels and power-state behavior.
+For feedback, green/ring 2 reports LED1/HIGH (~3 V) and LED2/LOW (~0 V) relative to white/ring 1 with the remote attached. One conditioned input may report both selections, but its loading and power-off behavior need validation. Optical LED observation is another candidate. Removing the original remote loads is a separate change requiring validation.
 
 ## XIAO and ESPHome references
 
